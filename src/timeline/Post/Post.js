@@ -2,12 +2,14 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar, Button } from "@mui/material";
 import React, {useState} from "react";
 import "./Post.css";
+import Slider from "./Slider/Slider"
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 // import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 // import TelegramIcon from "@mui/icons-material/Telegram";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-function Post({ posts, user, postImage, likes, timestamp , setPosts }) {
+function Post({ posts, user, likes, timestamp , setPosts }) {
+
   const [totalLike, setTotalLike] = useState(likes);
   const [currentLike, setLike] = useState(0);
   const handleLike = () =>{
@@ -34,7 +36,8 @@ function Post({ posts, user, postImage, likes, timestamp , setPosts }) {
         <MoreHorizIcon />
       </div>
       <div className="post__image">
-        <img src={postImage} alt="Post Image" />
+        {/* <img src={postImage} alt="Post Image" /> */}
+        <Slider slides={postImage}/>
       </div>
       <div className="post__footer">
         <div className="post__footerIcons">
